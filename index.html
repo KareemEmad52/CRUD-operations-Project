@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operation</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body >
+
+
+
+
+
+    <div class="container  my-4">
+      <h2 class="text-center fs-1 text-dark-emphasis">Product Mangement</h2>
+
+      <label for="productName" class="lead text-muted ">ProductName</label>
+      <input type="text" class="form-control my-1" id="productName" />
+
+      <label for="productPrice" class="lead text-muted my-2">ProductPrice</label>
+      <input type="number" class="form-control my-1" id="productPrice" />
+
+      <label for="productCategory" class="lead text-muted my-2">ProductCategory</label>
+      <input type="text" class="form-control my-1" id="productCategory" />
+
+      <label for="productDescription" class="lead text-muted my-2">ProductDescription</label>
+      <textarea id="productDescription" class="form-control my-1 mb-2"></textarea>
+
+      <button id="addBtn" onclick="addProduct()" class="btn btn-outline-primary my-2 mt-3 ">Add Product</button>
+      <button id="resetForm" disabled onclick="clearForm()" class="btn btn-outline-secondary my-2 mt-3 ">Reset</button>
+
+      <input onkeyup="searchItems(this.value)" placeholder="Search By Name..." type="text" class="form-control mx-auto w-75 my-2" id="searchItem"/>
+
+      <table class="table table-striped">
+        <thead>
+          <th class="text-primary-emphasis text-center">Product Name</th>
+          <th class="text-primary-emphasis">Product Price</th>
+          <th class="text-primary-emphasis">Product Category</th>
+          <th class="text-primary-emphasis">Description</th>
+          <th class="text-danger">Delete Product</th>
+          <th class="text-warning">Update Product</th>
+        </thead>
+
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+
+
+
+
+    
+    <div id="productUpdate" class="position-fixed    d-none  d-flex justify-content-center align-items-center ">
+      <div id="productUpdate-inner" class="w-50 p-5 bg-light shadow rounded-2">
+        <h2 class="text-center fs-1 text-info-emphasis">Product Update</h2>
+
+        <label for="productNameUpdate" class="lead text-muted">ProductName</label>
+        <input type="text" class="form-control my-1" id="productNameUpdate" />
+
+        <label for="productPriceUpdate" class="lead text-muted my-2">ProductPrice</label>
+        <input type="number" class="form-control my-1" id="productPriceUpdate" />
+
+        <label for="productCategoryUpdate" class="lead text-muted my-2">ProductCategory</label>
+        <input type="text" class="form-control my-1" id="productCategoryUpdate" />
+
+        <label for="productDescriptionUpdate" class="lead text-muted my-2">ProductDescription</label>
+        <textarea id="productDescriptionUpdate" class="form-control my-1 mb-2"></textarea>
+
+        <button id="updateBtn" onclick="sendUpdatedValue()" class="btn btn-outline-primary my-2 mt-3 ">Update</button>
+
+
+        <button id="cancel-inner" onclick="cancel()" class="btn btn-outline-danger my-2 mt-3 "> Cancel</button>
+      </div>
+    </div>
+
+
+
+
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>
